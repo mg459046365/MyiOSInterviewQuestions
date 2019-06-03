@@ -2,12 +2,6 @@
 typora-root-url: ../MyiOSInterviewQuestions
 ---
 
-
-
-
-
-
-
 ### 聊一聊 TCP 的滑动窗口协议？
 
 TCP 引入了一些技术和设计来做网络流控，Sliding Window 是其中一个技术。前面我们说过，TCP 头里有一个字段叫 Window，又叫 Advertised-Window，这个字段是接收端告诉发送端自己还有多少缓冲区可以接收数据。于是发送端就可以根据这个接收端的处理能力来发送数据，而不会导致接收端处理不过来。
@@ -531,7 +525,7 @@ NSLog(@"------------\n%@\n------------", report);
 
 ### HTTP报头信息有哪些
 
-![Http请求报头信息](/Http请求报头信息.png)
+![Http请求报头信息](/相关图片/Http请求报头信息.png)
 
 请求报文和响应报文都是以下4部分组成的
 
@@ -764,7 +758,7 @@ WebViews、ImagePicker 、Multi-Touch Controls、NotificationCenter本地和远�
 
 包含大多数低级别接近硬件的功能，它所包含的框架常常被其他框架所使用。Accelerate框架包含数字信号，线性代数，图像处理的接口。针对所有的iOS设备硬件之间的差异做优化，保证写一次代码在所有iOS设备上高效运行。CoreBluetooth框架利用蓝牙和外设交互，包括扫描连接蓝牙设备，保存连接状态，断开连接，获取外设的数据或者给外设传输数据等等。Security框架提供管理证书，公钥和私钥信任策略，keychain,hash认证数字签名等等与安全相关的解决方案。
 
-![iOS系统架构以及常用框架](/iOS系统架构以及常用框架.png)
+![iOS系统架构以及常用框架](/相关图片/iOS系统架构以及常用框架.png)
 
 ### Objective-C的内省
 
