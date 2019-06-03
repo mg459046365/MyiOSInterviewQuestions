@@ -1,4 +1,4 @@
-###聊一聊 TCP 的滑动窗口协议？
+### 聊一聊 TCP 的滑动窗口协议？
 
 TCP 引入了一些技术和设计来做网络流控，Sliding Window 是其中一个技术。前面我们说过，TCP 头里有一个字段叫 Window，又叫 Advertised-Window，这个字段是接收端告诉发送端自己还有多少缓冲区可以接收数据。于是发送端就可以根据这个接收端的处理能力来发送数据，而不会导致接收端处理不过来。
 
@@ -17,7 +17,7 @@ TCP 的拥塞控制主要是四个算法：1）慢启动；2）拥塞避免；3�
   文字常量区—常量字符串就是放在这里的。程序结束后由系统释放。
 7. **程序代码区**:存放函数体的二进制代码
 
-###线程与进程的区别和联系
+### 线程与进程的区别和联系
 
 1. 一个程序至少要有一个进程,一个进程至少要有一个线程.
 2. 进程:资源分配的最小独立单元,进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独立单位.
@@ -46,7 +46,7 @@ TCP 的拥塞控制主要是四个算法：1）慢启动；2）拥塞避免；3�
 4. 在使用分组和排序子句进行数据检索时，同样可以显著减少查询中分组和排序的时间。
 5.  通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能.   
 
-###谈下Objective C都有哪些锁机制，你一般用哪个？
+### 谈下Objective C都有哪些锁机制，你一般用哪个？
 
 1. NSLock
 
@@ -121,7 +121,7 @@ NSDistributedLock：分布锁，它本身是一个互斥锁，基于文件方式
 
 pthread_mutex_t：同步锁，基于C语言的同步锁机制，使用方法与其他同步锁机制类似。
 
-###聊下HTTP post的body体使用form-urlencoded和multipart/form-data的区别。
+### 聊下HTTP post的body体使用form-urlencoded和multipart/form-data的区别。
 
 1. application/x-www-form-urlencoded：
     窗体数据被编码为名称/值对，这是标准且默认的编码格式。当action为get时候，客户端把form数据转换成一个字串append到url后面，用?分割。当action为post时候，浏览器把form数据封装到http body中，然后发送到server。
@@ -159,7 +159,7 @@ pthread_mutex_t：同步锁，基于C语言的同步锁机制，使用方法与�
 2. 特别当你的应用发布到多个渠道的时候，你需要对不同渠道的crash文件，写一个自动化的分析脚本的时候，这个方法就极其有用。
 3. 具体方法 请百度
 
-###怎么防止反编译？
+### 怎么防止反编译？
 
 1. 本地数据加密。
 
@@ -185,7 +185,7 @@ pthread_mutex_t：同步锁，基于C语言的同步锁机制，使用方法与�
 
 超时重发，丢弃重复数据，校验数据，流量控制
 
-###Scoket连接和HTTP连接的区别
+### Scoket连接和HTTP连接的区别
 
 HTTP协议是基于TCP连接的，是应用层协议，主要解决如何包装数据。Socket是对TCP/IP协议的封装，Socket本身并不是协议，而是一个调用接口（API），通过Socket，我们才能使用TCP/IP协议。
 
@@ -193,7 +193,7 @@ HTTP协议是基于TCP连接的，是应用层协议，主要解决如何包装�
 
 **Socket连接**：长连接，客户端跟服务器端直接使用Socket进行连接，没有规定连接后断开，因此客户端和服务器段保持连接通道，双方可以主动发送数据，一般多用于游戏.Socket默认连接超时时间是30秒，默认大小是8K（理解为一个数据包大小）。
 
-###基于CTMediator的组件化方案，有哪些核心组成？
+### 基于CTMediator的组件化方案，有哪些核心组成？
 
 假如主APP调用某业务A，那么需要以下组成部分：
 
@@ -207,7 +207,7 @@ HTTP协议是基于TCP连接的，是应用层协议，主要解决如何包装�
    扩展里声明了所有A业务的对外接口，参数明确，这样外部调用者可以很容易理解如何调用接口。
    在扩展的实现里，对Target, Action需要通过硬编码进行指定。由于扩展的负责方和业务的负责方是相同的，所以这个不是问题。
 
-###HTTPS的加密原理
+### HTTPS的加密原理
 
 1. 服务器端用非对称加密(RSA)生成公钥和私钥
 
@@ -219,7 +219,7 @@ HTTP协议是基于TCP连接的，是应用层协议，主要解决如何包装�
 
 5. 服务器拿到客户端发来的加密后的密钥后, 再使用私钥解密密钥, 到此双方都获得通信的钥匙
 
-###哈希原理
+### 哈希原理
 
 散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
 
@@ -271,7 +271,7 @@ HTTP协议是基于TCP连接的，是应用层协议，主要解决如何包装�
  前者是逻辑上的同时发生（simultaneous），而后者是物理上的同时发生。
  **两者的联系**：并行的事件或活动一定是并发的，但反之并发的事件或活动未必是并行的。并行性是并发性的特例，而并发性是并行性的扩展。
 
-###AFNetworking 底层原理分析
+### AFNetworking 底层原理分析
 
 AFNetworking主要是对NSURLSession和NSURLConnection(iOS9.0废弃)的封装,其中主要有以下类:
 
@@ -286,7 +286,7 @@ AFNetworking主要是对NSURLSession和NSURLConnection(iOS9.0废弃)的封装,�
 8.  AFHTTPResponseSerializer; 万能解析器; JSON和XML之外的数据类型,直接返回二进制数据.对服务器返回的数据不做任何处理.
 9. AFXMLParserResponseSerializer; XML解析器;
 
-###SDWebImage如何解决tableView的复用时出现图片错乱问题的呢？
+### SDWebImage如何解决tableView的复用时出现图片错乱问题的呢？
 
 解决tableView复用错乱问题：每次都会调UIImageView+WebCache文件中的 [self sd_cancelCurrentImageLoad];
 
@@ -307,7 +307,7 @@ AFNetworking主要是对NSURLSession和NSURLConnection(iOS9.0废弃)的封装,�
 
 iOS 卡顿检查的依据是监控主线程 Runloop 的执行，观察执行耗时是否超过预定阀值(默认阀值为3000ms) 在监控到卡顿时会立即记录线程堆栈到本地，在App从后台切换到前台时，执行上报。
 
-####Runloop逻辑
+#### Runloop逻辑
 
 一个线程的的消息事件处理都是依赖于NSRunLoop来驱动，所以要知道线程在调用什么方法就需要从Runloop入手，其核心方法CFRunLoopRun简化后的主要逻辑大概如下：
 
@@ -364,7 +364,7 @@ int32_t __CFRunLoopRun()
 
 NSRunloop调用方法主要就是在KCFRunLoopBeforeSources和KCFRunLoopBeforeWaiting之间，还有KCFRunloopAfterWaiting之后，也就是如果我们发现这两个时间耗时太长，那么就可以判定主线程卡顿。
 
-####量化卡顿的程度
+#### 量化卡顿的程度
 
 要监控NSRunloop的状态，我们需要使用到CFRunloopObserverRef，通过它可以实时获的这些状态值得变化，具体使用如下：
 
@@ -441,7 +441,7 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
 }
 ```
 
-####记录卡顿的函数调用
+#### 记录卡顿的函数调用
 
 监控到了卡顿现场，当然下一步便是记录此时的函数调用信息，此处可以使用一个第三方的Crash收集组件PLCrashReporter，他不仅可以收集Crash信息也可以用书实时获取各线程的调用堆栈信息，如下
 
