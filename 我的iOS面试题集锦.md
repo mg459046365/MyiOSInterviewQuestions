@@ -911,7 +911,7 @@ struct objc_method {
 }
 ```
 
-###􏻏􏻐Foundation对象与Core Foundation 对象有什么区别
+### Foundation对象与Core Foundation 对象有什么区别
 
 Foundation对象是Objective-C对象，使用Objective-C语言实现；而Core Foundation 对象是C对象，使用C语言实现。两者之间可以通过`__bridge`、`__bridge_transfer`、`__bridge_retained`等关键字转换(桥接)。
 
