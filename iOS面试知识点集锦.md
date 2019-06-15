@@ -876,11 +876,23 @@ autorelease对象出了作用域之后，会被添加到最近一次创建的自
 
 ### Objective-C对象模型
 
-NSObject就是一个包含isa指针的结构体，如下图：
+NSObject实现了一个NSObject的protocol，里面包含一个isa的指针指向一个objc_class的结构体；而id其实就是objc_object的结构指针，所以它可以指向任何对象。实际上NSObject就是一个包含isa指针的结构体，如下图：
 
 ```c
-//NSObject的底层实现
+// NSObject在Objective-C中的定义如下。
+@interface NSObject <NSObject> {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-interface-ivars"
+    Class isa  OBJC_ISA_AVAILABILITY;
+#pragma clang diagnostic pop
+}
+
+//借助xcrun命令生成的文件，实际上NSObject的定义最终是包含一个Class类型名为isa的变量的结构体。如下：
 typedef struct objc_class *Class;
+struct NSObject_IMPL {
+    Class isa; // 8个字节
+}
+//OC中id类型底层实现如下，一个objc_object类型的结构体，里面只包含了一个objc_class类型的变量isa指针。
 typedef struct objc_object {
   // 里面就一个class类型的isa指针
   Class isa;
