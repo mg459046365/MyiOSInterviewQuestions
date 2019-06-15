@@ -977,7 +977,10 @@ Foundation对象和CoreFoundation对象更重要的区别是ARC下的内存管�
    CFStringRef cfstring1 = (CFStringRef)CFBridgingRetain(s1);
    ```
 
-   
+
+
+
+###只有实现了的方法才能被runtime找到，只声明的方法不能被找到。
 
 
 
