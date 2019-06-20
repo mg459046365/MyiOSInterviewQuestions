@@ -667,7 +667,7 @@ Content-Type: multipart/form-data; boundary=${bound}
 2. 声明的方法没被实现，编译器会报警，因为**扩展是在编译阶段被添加到类中**
 3. 定义在.m文件中的扩展方法为私有的，定义在.h文件中的扩展方法为公有的。扩展是在.m文件中声明私有方法的非常好的方式
 
-
+[Category的原理](https://www.jianshu.com/p/fa66c8be42a2)
 
 分类(类别)**Category**结构体如下图：
 
