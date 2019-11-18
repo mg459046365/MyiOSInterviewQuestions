@@ -982,7 +982,37 @@ Foundation对象和CoreFoundation对象更重要的区别是ARC下的内存管�
 
 ###只有实现了的方法才能被runtime找到，只声明的方法不能被找到。
 
+### Dealloc相关
 
+当一个对象要释放时，会自动调用dealloc，接下来的调用轨迹是
+
+1. dealloc
+
+2. _objc_rootDealloc
+
+3. rootDealloc
+
+4. object_dispose
+
+5. objc_destructInstance、free
+
+   ```objective-c
+   void *objc_destructInstance(id obj) {
+     if (obj) {
+       //Read all of the flags at once for perfomance
+       bool cxx = obj -> hasCxxDtor();
+       bool assoc = obj -> hasAssociatedObjects();
+       
+       //This order is important
+       if (cxx) object_cxxDestruct(obj); //清除成员变量
+       if (assoc) _object_remove_assocations(obj);//移除关联对象
+       obj->clearDeallocating();// 将指向当前对象的弱指针置为nil
+     }
+     return obj;
+   }
+   ```
+
+   
 
 
 
